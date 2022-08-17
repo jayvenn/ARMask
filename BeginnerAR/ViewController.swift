@@ -16,10 +16,10 @@ class ViewController: UIViewController {
     faceTrackingConfiguration.isLightEstimationEnabled = true
     return faceTrackingConfiguration
   }()
-  private let hat: Experience.Hat
+  private let hat: Entity
   // MARK: - Initializers
   required init?(coder: NSCoder) {
-    guard let hat = try? Experience.loadHat() else {
+    guard let hat = try? Entity.load(named: "Experience") else {
       fatalError("Unable to load completely load Experience.loadHat components.")
     }
     self.hat = hat
